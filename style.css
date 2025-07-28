@@ -129,3 +129,89 @@ header {
     background: var(--hbl-dark-green);
     border-color: var(--hbl-dark-green);
 }
+
+.hero-slider {
+    position: relative;
+    height: 500px;
+    margin-bottom: var(--spacing-2xl);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity var(--transition-slow);
+    background: linear-gradient(135deg, var(--hbl-green) 0%, var(--hbl-light-green) 100%);
+    display: flex;
+    align-items: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--spacing-2xl);
+    color: var(--white);
+}
+
+.slide-text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.slide-text h1 {
+    font-size: 3rem;
+    font-weight: var(--font-weight-extrabold);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.2;
+}
+
+.slide-text p {
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-xl);
+    opacity: 0.9;
+}
+
+.slide-actions {
+    display: flex;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.slide-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banking-visual {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-2xl);
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+}
+
+.banking-visual i {
+    font-size: 4rem;
+    color: var(--white);
+    margin-bottom: var(--spacing-md);
+}
+
+.visual-text {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--white);
+}
