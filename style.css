@@ -247,3 +247,25 @@ header {
 .slider-btn:hover {
     background: rgba(255, 255, 255, 0.3);
 }
+/* Slider Indicators */
+.slider-indicators {
+    position: absolute;
+    bottom: var(--spacing-xl);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.indicator.active {
+    background: var(--white);
+}

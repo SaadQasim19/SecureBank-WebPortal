@@ -26,3 +26,27 @@ function showSection(sectionId) {
     // Scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+// Tab Navigation Functions
+function showTab(tabId, element) {
+    // Hide all tab contents
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(content => {
+        content.classList.remove('active');
+    });
+    
+    // Show selected tab content
+    const selectedTab = document.getElementById(tabId);
+    if (selectedTab) {
+        selectedTab.classList.add('active');
+    }
+    
+    // Update tab buttons
+    const tabButtons = element.parentElement.querySelectorAll('.nav-tab');
+    tabButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+    
+    // Add active class to clicked tab
+    element.classList.add('active');
+}
