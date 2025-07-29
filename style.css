@@ -355,3 +355,60 @@ header {
     color: var(--hbl-green);
     font-size: 0.8rem;
 }
+
+/* Why Choose Section */
+.why-choose-section {
+    background: var(--white);
+    padding: var(--spacing-2xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.feature-item {
+    text-align: center;
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    background: var(--background-gray);
+    transition: var(--transition-normal);
+}
+
+.feature-item:hover {
+    background: rgba(0, 112, 74, 0.05);
+    transform: translateY(-3px);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-lg);
+}
+
+.feature-icon i {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.feature-item h4 {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--hbl-green);
+    margin-bottom: var(--spacing-md);
+}
+
+.feature-item p {
+    color: var(--enterprise-gray);
+    line-height: 1.6;
+}
