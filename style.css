@@ -542,3 +542,70 @@ header {
 .summary-card-change.neutral {
     color: var(--enterprise-gray);
 }
+
+/* Quick Links - Always Visible */
+.quick-links {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.quick-links h3 {
+    color: var(--hbl-green);
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-semibold);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.quick-link-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    background: var(--white); /* Changed from background-gray to white */
+    border: 2px solid var(--hbl-green); /* Made border always visible */
+    transition: var(--transition-normal);
+    cursor: pointer;
+    box-shadow: var(--shadow-sm); /* Added subtle shadow */
+}
+
+.quick-link-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    background: var(--hbl-green);
+    border-color: var(--hbl-green);
+}
+
+.quick-link-item:hover .quick-link-title {
+    color: var(--white);
+}
+
+.quick-link-item:hover .quick-link-description {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.quick-link-title {
+    font-weight: var(--font-weight-semibold);
+    color: var(--hbl-green);
+    font-size: 1rem;
+    margin-bottom: var(--spacing-xs);
+    transition: var(--transition-normal);
+}
+
+.quick-link-description {
+    color: var(--enterprise-gray);
+    font-size: 0.875rem;
+    transition: var(--transition-normal);
+}
