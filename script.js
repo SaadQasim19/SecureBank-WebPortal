@@ -50,3 +50,20 @@ function showTab(tabId, element) {
     // Add active class to clicked tab
     element.classList.add('active');
 }
+
+// Hero Slider Functions
+function nextSlide() {
+    const slides = document.querySelectorAll('.slide');
+    const indicators = document.querySelectorAll('.indicator');
+    
+    // Remove active class from current slide and indicator
+    slides[currentSlide].classList.remove('active');
+    indicators[currentSlide].classList.remove('active');
+    
+    // Move to next slide
+    currentSlide = (currentSlide + 1) % totalSlides;
+    
+    // Add active class to new slide and indicator
+    slides[currentSlide].classList.add('active');
+    indicators[currentSlide].classList.add('active');
+}
