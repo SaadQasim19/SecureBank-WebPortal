@@ -453,3 +453,92 @@ header {
     color: var(--hbl-green);
     border-color: rgba(0, 112, 74, 0.2);
 }
+/* Summary Cards */
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.summary-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg); /* Reduced from xl to lg */
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    min-height: 140px; /* Fixed height */
+    max-height: 160px; /* Maximum height */
+}
+
+.summary-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--primary-gradient);
+}
+
+.summary-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--hbl-green);
+}
+
+.summary-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-md); /* Reduced spacing */
+}
+
+.summary-card-title {
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--enterprise-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.summary-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+}
+
+.summary-card-value {
+    font-size: 1.75rem; /* Reduced from 2rem */
+    font-weight: var(--font-weight-bold);
+    color: var(--hbl-green);
+    margin-bottom: var(--spacing-sm); /* Reduced spacing */
+}
+
+.summary-card-change {
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-medium);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.summary-card-change.positive {
+    color: var(--success-color);
+}
+
+.summary-card-change.negative {
+    color: var(--error-color);
+}
+
+.summary-card-change.neutral {
+    color: var(--enterprise-gray);
+}
