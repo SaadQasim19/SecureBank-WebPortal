@@ -67,3 +67,18 @@ function nextSlide() {
     slides[currentSlide].classList.add('active');
     indicators[currentSlide].classList.add('active');
 }
+function previousSlide() {
+    const slides = document.querySelectorAll('.slide');
+    const indicators = document.querySelectorAll('.indicator');
+    
+    // Remove active class from current slide and indicator
+    slides[currentSlide].classList.remove('active');
+    indicators[currentSlide].classList.remove('active');
+    
+    // Move to previous slide
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    
+    // Add active class to new slide and indicator
+    slides[currentSlide].classList.add('active');
+    indicators[currentSlide].classList.add('active');
+}
