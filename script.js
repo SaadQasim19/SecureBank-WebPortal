@@ -82,3 +82,18 @@ function previousSlide() {
     slides[currentSlide].classList.add('active');
     indicators[currentSlide].classList.add('active');
 }
+function currentSlideFunc(slideIndex) {
+    const slides = document.querySelectorAll('.slide');
+    const indicators = document.querySelectorAll('.indicator');
+    
+    // Remove active class from current slide and indicator
+    slides[currentSlide].classList.remove('active');
+    indicators[currentSlide].classList.remove('active');
+    
+    // Set new current slide
+    currentSlide = slideIndex - 1;
+    
+    // Add active class to new slide and indicator
+    slides[currentSlide].classList.add('active');
+    indicators[currentSlide].classList.add('active');
+}

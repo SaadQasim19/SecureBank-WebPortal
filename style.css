@@ -646,3 +646,68 @@ header {
     align-items: center;
     gap: var(--spacing-md);
 }
+/* Transaction Styles */
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg) 0;
+    border-bottom: 1px solid var(--border-gray);
+    transition: var(--transition-normal);
+}
+
+.transaction-item:hover {
+    background: var(--background-gray);
+    border-radius: var(--radius-md);
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+}
+
+.transaction-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--spacing-lg);
+    color: var(--white);
+    flex-shrink: 0;
+}
+
+.transaction-icon.income {
+    background: var(--success-color);
+}
+
+.transaction-icon.expense {
+    background: var(--error-color);
+}
+
+.transaction-info {
+    flex: 1;
+    margin-right: var(--spacing-lg);
+}
+
+.transaction-description {
+    font-weight: var(--font-weight-semibold);
+    color: var(--enterprise-navy);
+    margin-bottom: var(--spacing-xs);
+}
+
+.transaction-date {
+    color: var(--enterprise-gray);
+    font-size: 0.875rem;
+}
+
+.transaction-amount {
+    font-weight: var(--font-weight-bold);
+    font-size: 1rem;
+}
+
+.amount-positive {
+    color: var(--success-color);
+}
+
+.amount-negative {
+    color: var(--error-color);
+}
