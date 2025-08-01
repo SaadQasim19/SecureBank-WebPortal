@@ -101,3 +101,11 @@ function startSlider() {
     // Auto-advance slides every 5 seconds
     setInterval(nextSlide, 5000);
 }
+// Modal Functions
+function showModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+}
