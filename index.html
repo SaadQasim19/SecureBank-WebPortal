@@ -422,6 +422,34 @@
             </div>
           </div>
         </div>
+         <!-- Transactions Tab -->
+        <div id="transactions" class="tab-content">
+          <div class="card">
+            <h2><i class="fas fa-list"></i> All Transactions</h2>
+            <div class="transaction-filters">
+              <div class="filter-group">
+                <label for="date-filter">Date Range:</label>
+                <select id="date-filter">
+                  <option value="7">Last 7 days</option>
+                  <option value="30">Last 30 days</option>
+                  <option value="90">Last 3 months</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label for="type-filter">Type:</label>
+                <select id="type-filter">
+                  <option value="all">All Types</option>
+                  <option value="income">Income</option>
+                  <option value="expense">Expenses</option>
+                </select>
+              </div>
+            </div>
+            <div id="all-transactions-list">
+              <!-- All transactions will be populated by JavaScript -->
+            </div>
+          </div>
+        </div>
+
     <script src="script.js"></script>
 </body>
 </html>
