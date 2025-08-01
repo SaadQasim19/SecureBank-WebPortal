@@ -449,7 +449,49 @@
             </div>
           </div>
         </div>
-
+  <!-- Transfers Tab -->
+        <div id="transfers" class="tab-content">
+          <div class="card">
+            <h2><i class="fas fa-paper-plane"></i> Transfer Money</h2>
+            <form id="transfer-form" class="transfer-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="from-account">From Account</label>
+                  <select id="from-account" required>
+                    <option value="">Select Account</option>
+                    <option value="checking">Primary Checking - $12,458.92</option>
+                    <option value="savings">Savings Account - $25,847.65</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="to-account">To Account</label>
+                  <select id="to-account" required>
+                    <option value="">Select Account</option>
+                    <option value="checking">Primary Checking</option>
+                    <option value="savings">Savings Account</option>
+                    <option value="external">External Account</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="transfer-amount">Amount</label>
+                <input type="number" id="transfer-amount" name="amount" step="0.01" min="1" required>
+              </div>
+              <div class="form-group">
+                <label for="recipient">Recipient (if external)</label>
+                <input type="text" id="recipient" name="recipient" placeholder="Enter recipient name">
+              </div>
+              <div class="form-group">
+                <label for="memo">Memo (optional)</label>
+                <input type="text" id="memo" placeholder="Transfer description">
+              </div>
+              <button type="submit" class="primary-btn">
+                <i class="fas fa-paper-plane"></i>
+                Transfer Funds
+              </button>
+            </form>
+          </div>
+        </div>
     <script src="script.js"></script>
 </body>
 </html>
