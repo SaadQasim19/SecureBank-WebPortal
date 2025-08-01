@@ -97,3 +97,7 @@ function currentSlideFunc(slideIndex) {
     slides[currentSlide].classList.add('active');
     indicators[currentSlide].classList.add('active');
 }
+function startSlider() {
+    // Auto-advance slides every 5 seconds
+    setInterval(nextSlide, 5000);
+}
