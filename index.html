@@ -638,6 +638,103 @@
           </div>
         </div>
       </section>
+      <!-- Loans Section -->
+      <section id="loans" class="section">
+        <div class="section-header">
+          <h2><i class="fas fa-hand-holding-usd"></i> Loan Services</h2>
+          <p>Apply for loans and manage your existing loan accounts</p>
+        </div>
+
+        <div class="loan-products">
+          <div class="services-grid">
+            <div class="service-card" onclick="showModal('home-loan-modal')">
+              <div class="service-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <h3>Home Loans</h3>
+              <p>Competitive rates starting from 3.25% APR for qualified buyers.</p>
+              <div class="service-features">
+                <span><i class="fas fa-check"></i> Up to 30-year terms</span>
+                <span><i class="fas fa-check"></i> No prepayment penalty</span>
+                <span><i class="fas fa-check"></i> Quick pre-approval</span>
+              </div>
+            </div>
+
+            <div class="service-card" onclick="showModal('auto-loan-modal')">
+              <div class="service-icon">
+                <i class="fas fa-car"></i>
+              </div>
+              <h3>Auto Loans</h3>
+              <p>Finance your dream car with rates as low as 2.99% APR.</p>
+              <div class="service-features">
+                <span><i class="fas fa-check"></i> New & used vehicles</span>
+                <span><i class="fas fa-check"></i> Up to 84 months</span>
+                <span><i class="fas fa-check"></i> Same-day approval</span>
+              </div>
+            </div>
+
+            <div class="service-card" onclick="showModal('personal-loan-modal')">
+              <div class="service-icon">
+                <i class="fas fa-user"></i>
+              </div>
+              <h3>Personal Loans</h3>
+              <p>Unsecured personal loans for any purpose from 5.99% APR.</p>
+              <div class="service-features">
+                <span><i class="fas fa-check"></i> $2,000 - $50,000</span>
+                <span><i class="fas fa-check"></i> Fixed interest rates</span>
+                <span><i class="fas fa-check"></i> No collateral required</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="loan-calculator">
+          <div class="card">
+            <h2><i class="fas fa-calculator"></i> Loan Calculator</h2>
+            <form class="calculator-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="loan-amount">Loan Amount</label>
+                  <input type="number" id="loan-amount" placeholder="25000" min="1000" max="1000000">
+                </div>
+                <div class="form-group">
+                  <label for="interest-rate">Interest Rate (%)</label>
+                  <input type="number" id="interest-rate" placeholder="5.5" step="0.01" min="0.1" max="30">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="loan-term">Loan Term (years)</label>
+                  <input type="number" id="loan-term" placeholder="5" min="1" max="30">
+                </div>
+                <div class="form-group">
+                  <button type="button" class="primary-btn" onclick="calculateLoan()">
+                    <i class="fas fa-calculator"></i>
+                    Calculate
+                  </button>
+                </div>
+              </div>
+            </form>
+            
+            <div class="calculation-results" style="display: none;" id="loan-results">
+              <h3>Loan Details</h3>
+              <div class="result-item">
+                <span>Monthly Payment:</span>
+                <span id="monthly-payment">$0.00</span>
+              </div>
+              <div class="result-item">
+                <span>Total Payment:</span>
+                <span id="total-payment">$0.00</span>
+              </div>
+              <div class="result-item">
+                <span>Total Interest:</span>
+                <span id="total-interest">$0.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     <script src="script.js"></script>
 </body>
 </html>
