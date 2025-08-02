@@ -941,6 +941,36 @@
         </form>
       </div>
     </div>
+     <!-- Sign Up Modal -->
+    <div id="signup-modal" class="modal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('signup-modal')">&times;</button>
+        <h2>Create Your Account</h2>
+        <form>
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="new-password">Password</label>
+            <input type="password" id="new-password" required>
+          </div>
+          <button type="submit" class="primary-btn">
+            <i class="fas fa-user-plus"></i>
+            Create Account
+          </button>
+        </form>
+      </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
