@@ -1004,3 +1004,24 @@ header {
     color: var(--hbl-dark-green);
     text-decoration: underline;
 }
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    animation: fadeInUp var(--transition-normal);
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeInUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
