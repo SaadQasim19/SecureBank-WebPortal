@@ -1025,3 +1025,34 @@ header {
         transform: translateY(0); 
     }
 }
+
+/* Notification System */
+.notification {
+    position: fixed;
+    top: var(--spacing-xl);
+    right: var(--spacing-xl);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    color: var(--white);
+    font-weight: var(--font-weight-semibold);
+    z-index: 1001;
+    transform: translateX(400px);
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-xl);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    max-width: 350px;
+}
+
+.notification.success {
+    background: var(--success-color);
+}
+
+.notification.error {
+    background: var(--error-color);
+}
+
+.notification.show {
+    transform: translateX(0);
+}
