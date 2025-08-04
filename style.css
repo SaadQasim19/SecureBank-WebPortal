@@ -1056,3 +1056,66 @@ header {
 .notification.show {
     transform: translateX(0);
 }
+
+/* Account List Styles */
+.account-list, .holdings-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.account-item, .holding-item, .bill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg);
+    background: var(--background-gray);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--border-gray);
+    transition: var(--transition-normal);
+}
+
+.account-item:hover, .holding-item:hover, .bill-item:hover {
+    border-color: var(--hbl-green);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.account-info, .bill-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.account-icon, .bill-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+}
+
+.account-details h4 {
+    color: var(--hbl-green);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-xs);
+}
+
+.account-balance {
+    text-align: right;
+}
+
+.balance-amount {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--hbl-green);
+    display: block;
+}
+
+.balance-label {
+    font-size: 0.875rem;
+    color: var(--enterprise-gray);
+}
