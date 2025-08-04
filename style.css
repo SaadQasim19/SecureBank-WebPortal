@@ -957,3 +957,50 @@ header {
     font-size: 1.75rem;
     font-weight: var(--font-weight-bold);
 }
+
+/* Form Styles */
+.form-group {
+    margin-bottom: var(--spacing-xl);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--enterprise-navy);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: var(--spacing-lg);
+    border: 2px solid var(--border-gray);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: var(--transition-normal);
+    background: var(--white);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--hbl-green);
+    box-shadow: 0 0 0 3px rgba(0, 112, 74, 0.1);
+}
+
+.forgot-password {
+    color: var(--hbl-green);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: var(--spacing-md);
+    display: inline-block;
+    transition: var(--transition-normal);
+}
+
+.forgot-password:hover {
+    color: var(--hbl-dark-green);
+    text-decoration: underline;
+}
