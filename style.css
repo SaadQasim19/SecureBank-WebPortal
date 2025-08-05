@@ -1147,3 +1147,23 @@ header {
     border-radius: var(--radius-md);
     font-family: inherit;
 }
+
+/* Transfer Form */
+.transfer-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Bills Section */
+.upcoming-bills h3 {
+    color: var(--hbl-green);
+    margin-bottom: var(--spacing-lg);
+}
+
+.bill-amount {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--hbl-green);
+}
