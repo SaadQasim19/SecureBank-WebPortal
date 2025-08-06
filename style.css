@@ -1290,7 +1290,7 @@ header {
     margin-bottom: var(--spacing-sm);
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
     .transfer-form .form-row,
     .calculator-form .form-row {
