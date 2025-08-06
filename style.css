@@ -1196,3 +1196,52 @@ header {
 .change.negative {
     color: var(--error-color);
 }
+
+/* Credit Card Styles */
+.card-item {
+    display: flex;
+    gap: var(--spacing-xl);
+    align-items: center;
+    padding: var(--spacing-lg);
+    background: var(--background-gray);
+    border-radius: var(--radius-lg);
+}
+
+.credit-card {
+    background: var(--primary-gradient);
+    color: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    min-width: 300px;
+    box-shadow: var(--shadow-lg);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.card-brand {
+    font-weight: var(--font-weight-bold);
+    font-size: 1.125rem;
+}
+
+.card-number {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-lg);
+    letter-spacing: 2px;
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+}
+
+.card-actions {
+    display: flex;
+    gap: var(--spacing-md);
+}
