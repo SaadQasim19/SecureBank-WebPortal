@@ -124,3 +124,14 @@ window.addEventListener('click', function(event) {
         document.body.style.overflow = 'auto';
     }
 });
+
+// Banking Functions
+function updateBalance() {
+    const balanceElement = document.getElementById('balance');
+    if (balanceElement) {
+        balanceElement.textContent = `$${currentBalance.toLocaleString('en-US', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })}`;
+    }
+}
