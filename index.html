@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureBank - Professional Online Banking</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <div class="header-content">
+          <div class="logo">
+            <i class="fas fa-university"></i>
+            SecureBank
+          </div>
+          <nav class="main-navigation">
+            <ul class="nav-links">
+              <li><a href="#" onclick="showSection('home')" class="nav-link active">Home</a></li>
+              <li><a href="#" onclick="showSection('banking')" class="nav-link">Banking</a></li>
+              <li><a href="#" onclick="showSection('investments')" class="nav-link">Investments</a></li>
+              <li><a href="#" onclick="showSection('loans')" class="nav-link">Loans</a></li>
+              <li><a href="#" onclick="showSection('cards')" class="nav-link">Cards</a></li>
+              <li><a href="#" onclick="showSection('contact')" class="nav-link">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="header-actions">
+            <button class="login-btn" onclick="showModal('login-modal')">
+              <i class="fas fa-sign-in-alt"></i>
+              Login
+            </button>
+            <button class="signup-btn" onclick="showModal('signup-modal')">
+              <i class="fas fa-user-plus"></i>
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </header>
+
+        <!-- Hero Slider -->
+        <div class="hero-slider">
+          <div class="slide active">
+            <div class="slide-content">
+              <div class="slide-text">
+                <h1>Secure Digital Banking for the Modern World</h1>
+                <p>Experience next-generation banking with advanced security, intuitive design, and comprehensive financial solutions tailored for your success.</p>
+                <div class="slide-actions">
+                  <button class="primary-btn" onclick="showModal('signup-modal')">
+                    Open Account <i class="fas fa-arrow-right"></i>
+                  </button>
+                  <button class="secondary-btn" onclick="showSection('banking')">
+                    Explore Services
+                  </button>
+                </div>
+              </div>
+              <div class="slide-image">
+                <div class="banking-visual">
+                  <i class="fas fa-shield-alt"></i>
+                  <div class="visual-text">Secure Banking</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="slide">
+            <div class="slide-content">
+              <div class="slide-text">
+                <h1>Smart Investment Solutions</h1>
+                <p>Grow your wealth with our expert-managed investment portfolios and real-time market insights.</p>
+                <div class="slide-actions">
+                  <button class="primary-btn" onclick="showSection('investments')">
+                    Start Investing <i class="fas fa-chart-line"></i>
+                  </button>
+                  <button class="secondary-btn" onclick="showModal('investment-info-modal')">
+                    View Portfolio
+                  </button>
+                </div>
+              </div>
+              <div class="slide-image">
+                <div class="banking-visual">
+                  <i class="fas fa-chart-line"></i>
+                  <div class="visual-text">Smart Investing</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="slide-content">
+              <div class="slide-text">
+                <h1>Flexible Loan Options</h1>
+                <p>Achieve your dreams with competitive rates and flexible terms tailored to your needs.</p>
+                <div class="slide-actions">
+                  <button class="primary-btn" onclick="showSection('loans')">
+                    Apply Now <i class="fas fa-hand-holding-usd"></i>
+                  </button>
+                  <button class="secondary-btn" onclick="showModal('loan-calculator-modal')">
+                    Calculate Loan
+                  </button>
+                </div>
+              </div>
+              <div class="slide-image">
+                <div class="banking-visual">
+                  <i class="fas fa-home"></i>
+                  <div class="visual-text">Home Loans</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+           <!-- Slider Controls -->
+          <div class="slider-controls">
+            <button class="slider-btn prev" onclick="previousSlide()">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-btn next" onclick="nextSlide()">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+                    <!-- Slider Indicators -->
+          <div class="slider-indicators">
+            <div class="indicator active" onclick="currentSlide(1)"></div>
+            <div class="indicator" onclick="currentSlide(2)"></div>
+            <div class="indicator" onclick="currentSlide(3)"></div>
+          </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="services-section">
+          <div class="section-header">
+            <h2><i class="fas fa-concierge-bell"></i> Our Services</h2>
+            <p>Comprehensive financial solutions designed to meet all your banking needs</p>
+          </div>
+                    <div class="services-grid">
+            <div class="service-card" onclick="showSection('banking')">
+              <div class="service-icon">
+                <i class="fas fa-university"></i>
+              </div>
+              <h3>Personal Banking</h3>
+              <p>Complete banking solutions including checking, savings, and money market accounts with competitive rates.</p>
+              <div class="service-features">
+                <span><i class="fas fa-check"></i> Mobile & Online Banking</span>
+                <span><i class="fas fa-check"></i> ATM Network Access</span>
+                <span><i class="fas fa-check"></i> 24/7 Customer Support</span>
+              </div>
+            </div>
+
+            <div class="service-card" onclick="showSection('investments')">
+              <div class="service-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3>Investment Services</h3>
+              <p>Professional investment management and advisory services to help you build and preserve wealth.</p>
+              <div class="service-features">
+                <span><i class="fas fa-check"></i> Portfolio Management</span>
+                <span><i class="fas fa-check"></i> Financial Planning</span>
+                <span><i class="fas fa-check"></i> Expert Advisory</span>
+              </div>
+            </div>
+
+            <div class="service-card" onclick="showSection('loans')">
+              <div class="service-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <h3>Lending Solutions</h3>
+              <p>Flexible loan options for homes, automobiles, and personal needs with competitive rates.</p>
+              <div class="service-features">
+                <span><i class="fas fa-check"></i> Competitive Rates</span>
+                <span><i class="fas fa-check"></i> Quick Approval</span>
+                <span><i class="fas fa-check"></i> Flexible Terms</span>
+              </div>
+            </div>
+
+            <div class="service-card" onclick="showSection('cards')">
+              <div class="service-icon">
+                <i class="fas fa-credit-card"></i>
+              </div>
+              <h3>Credit Cards</h3>
+              <p>Premium credit cards with rewards, cashback, and exclusive benefits for every lifestyle.</p>
+              <div class="service-features">
+                <span><i class="fas fa-check"></i> Rewards Program</span>
+                <span><i class="fas fa-check"></i> Fraud Protection</span>
+                <span><i class="fas fa-check"></i> Contactless Payment</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Why Choose Us Section -->
+        <div class="why-choose-section">
+          <div class="section-header">
+            <h2><i class="fas fa-star"></i> Why Choose SecureBank</h2>
+            <p>Experience banking excellence with our commitment to security, innovation, and customer satisfaction</p>
+          </div>
+          
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h4>Bank-Grade Security</h4>
+              <p>Advanced encryption and multi-factor authentication to protect your financial information.</p>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h4>Mobile First</h4>
+              <p>Intuitive mobile app with all banking features accessible from anywhere, anytime.</p>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-headset"></i>
+              </div>
+              <h4>24/7 Support</h4>
+              <p>Round-the-clock customer service with dedicated support specialists.</p>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-chart-bar"></i>
+              </div>
+              <h4>Smart Analytics</h4>
+              <p>Intelligent insights and spending analysis to help you make better financial decisions.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+ <!-- Banking Dashboard Section -->
+      <section id="banking" class="section">
+        <div class="section-header">
+          <h2><i class="fas fa-tachometer-alt"></i> Banking Dashboard</h2>
+          <p>Manage your accounts and transactions with our comprehensive banking dashboard</p>
+        </div>
+         <!-- Tab Navigation -->
+        <div class="nav-tabs">
+          <button class="nav-tab active" onclick="showTab('dashboard', this)">
+            <i class="fas fa-home"></i> Dashboard
+          </button>
+          <button class="nav-tab" onclick="showTab('accounts', this)">
+            <i class="fas fa-wallet"></i> Accounts
+          </button>
+          <button class="nav-tab" onclick="showTab('transactions', this)">
+            <i class="fas fa-exchange-alt"></i> Transactions
+          </button>
+          <button class="nav-tab" onclick="showTab('transfers', this)">
+            <i class="fas fa-paper-plane"></i> Transfers
+          </button>
+          <button class="nav-tab" onclick="showTab('bills', this)">
+            <i class="fas fa-file-invoice-dollar"></i> Bills
+          </button>
+        </div>
+ <!-- Dashboard Tab -->
+        <div id="dashboard" class="tab-content active">
+          <!-- Summary Cards -->
+          <div class="summary-cards">
+            <div class="summary-card">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Total Balance</span>
+                <div class="summary-card-icon">
+                  <i class="fas fa-wallet"></i>
+                </div>
+              </div>
+              <div class="summary-card-value" id="balance">$12,458.92</div>
+              <div class="summary-card-change positive">
+                <i class="fas fa-arrow-up"></i>
+                +2.4% from last month
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Monthly Spending</span>
+                <div class="summary-card-icon">
+                  <i class="fas fa-credit-card"></i>
+                </div>
+              </div>
+              <div class="summary-card-value">$2,450.23</div>
+              <div class="summary-card-change negative">
+                <i class="fas fa-arrow-down"></i>
+                -5.2% from last month
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Investments</span>
+                <div class="summary-card-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+              </div>
+              <div class="summary-card-value">$24,856.32</div>
+              <div class="summary-card-change positive">
+                <i class="fas fa-arrow-up"></i>
+                +8.7% from last month
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Credit Available</span>
+                <div class="summary-card-icon">
+                  <i class="fas fa-credit-card"></i>
+                </div>
+              </div>
+              <div class="summary-card-value">$3,247.50</div>
+              <div class="summary-card-change neutral">
+                <i class="fas fa-minus"></i>
+                No change
+              </div>
+            </div>
+          </div>
+            <!-- Quick Actions -->
+          <div class="quick-links">
+            <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+            <div class="quick-links-grid">
+              <div class="quick-link-item" onclick="showModal('transfer-modal')">
+                <div class="quick-link-icon">
+                  <i class="fas fa-exchange-alt"></i>
+                </div>
+                <div class="quick-link-content">
+                  <div class="quick-link-title">Transfer Money</div>
+                  <div class="quick-link-description">Send money instantly</div>
+                </div>
+              </div>
+
+              <div class="quick-link-item" onclick="showModal('bill-modal')">
+                <div class="quick-link-icon">
+                  <i class="fas fa-file-invoice-dollar"></i>
+                </div>
+                <div class="quick-link-content">
+                  <div class="quick-link-title">Pay Bills</div>
+                  <div class="quick-link-description">Manage your bills</div>
+                </div>
+              </div>
+
+              <div class="quick-link-item" onclick="showModal('deposit-modal')">
+                <div class="quick-link-icon">
+                  <i class="fas fa-plus-circle"></i>
+                </div>
+                <div class="quick-link-content">
+                  <div class="quick-link-title">Mobile Deposit</div>
+                  <div class="quick-link-description">Deposit checks</div>
+                </div>
+              </div>
+
+              <div class="quick-link-item" onclick="showModal('statements-modal')">
+                <div class="quick-link-icon">
+                  <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="quick-link-content">
+                  <div class="quick-link-title">Statements</div>
+                  <div class="quick-link-description">View statements</div>
+                </div>
+              </div>
+            </div>
+          </div>
+            <!-- Recent Transactions -->
+          <div class="card">
+            <h2><i class="fas fa-history"></i> Recent Transactions</h2>
+            <div id="transactions-list">
+              <!-- Transactions will be populated by JavaScript -->
+            </div>
+          </div>
+        </div>
+          <!-- Accounts Tab -->
+        <div id="accounts" class="tab-content">
+          <div class="card">
+            <h2><i class="fas fa-wallet"></i> Your Accounts</h2>
+            <div class="account-list">
+              <div class="account-item">
+                <div class="account-info">
+                  <div class="account-icon">
+                    <i class="fas fa-university"></i>
+                  </div>
+                  <div class="account-details">
+                    <h4>Primary Checking</h4>
+                    <p>Account: ****1234</p>
+                  </div>
+                </div>
+                <div class="account-balance">
+                  <span class="balance-amount">$12,458.92</span>
+                  <span class="balance-label">Available Balance</span>
+                </div>
+              </div>
+              
+              <div class="account-item">
+                <div class="account-info">
+                  <div class="account-icon">
+                    <i class="fas fa-piggy-bank"></i>
+                  </div>
+                  <div class="account-details">
+                    <h4>Savings Account</h4>
+                    <p>Account: ****5678</p>
+                  </div>
+                </div>
+                <div class="account-balance">
+                  <span class="balance-amount">$25,847.65</span>
+                  <span class="balance-label">Available Balance</span>
+                </div>
+              </div>
+
+              <div class="account-item">
+                <div class="account-info">
+                  <div class="account-icon">
+                    <i class="fas fa-credit-card"></i>
+                  </div>
+                  <div class="account-details">
+                    <h4>Credit Card</h4>
+                    <p>Card: ****9012</p>
+                  </div>
+                </div>
+                <div class="account-balance">
+                  <span class="balance-amount">$3,247.50</span>
+                  <span class="balance-label">Available Credit</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+         <!-- Transactions Tab -->
+        <div id="transactions" class="tab-content">
+          <div class="card">
+            <h2><i class="fas fa-list"></i> All Transactions</h2>
+            <div class="transaction-filters">
+              <div class="filter-group">
+                <label for="date-filter">Date Range:</label>
+                <select id="date-filter">
+                  <option value="7">Last 7 days</option>
+                  <option value="30">Last 30 days</option>
+                  <option value="90">Last 3 months</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label for="type-filter">Type:</label>
+                <select id="type-filter">
+                  <option value="all">All Types</option>
+                  <option value="income">Income</option>
+                  <option value="expense">Expenses</option>
+                </select>
+              </div>
+            </div>
+            <div id="all-transactions-list">
+              <!-- All transactions will be populated by JavaScript -->
+            </div>
+          </div>
+        </div>
+  <!-- Transfers Tab -->
+        <div id="transfers" class="tab-content">
+          <div class="card">
+            <h2><i class="fas fa-paper-plane"></i> Transfer Money</h2>
+            <form id="transfer-form" class="transfer-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="from-account">From Account</label>
+                  <select id="from-account" required>
+                    <option value="">Select Account</option>
+                    <option value="checking">Primary Checking - $12,458.92</option>
+                    <option value="savings">Savings Account - $25,847.65</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="to-account">To Account</label>
+                  <select id="to-account" required>
+                    <option value="">Select Account</option>
+                    <option value="checking">Primary Checking</option>
+                    <option value="savings">Savings Account</option>
+                    <option value="external">External Account</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="transfer-amount">Amount</label>
+                <input type="number" id="transfer-amount" name="amount" step="0.01" min="1" required>
+              </div>
+              <div class="form-group">
+                <label for="recipient">Recipient (if external)</label>
+                <input type="text" id="recipient" name="recipient" placeholder="Enter recipient name">
+              </div>
+              <div class="form-group">
+                <label for="memo">Memo (optional)</label>
+                <input type="text" id="memo" placeholder="Transfer description">
+              </div>
+              <button type="submit" class="primary-btn">
+                <i class="fas fa-paper-plane"></i>
+                Transfer Funds
+              </button>
+            </form>
+          </div>
+        </div>
+         <!-- Bills Tab -->
+        <div id="bills" class="tab-content">
+          <div class="card">
+            <h2><i class="fas fa-file-invoice-dollar"></i> Manage Bills</h2>
+            <div class="bills-section">
+              <div class="upcoming-bills">
+                <h3>Upcoming Bills</h3>
+                <div class="bill-item">
+                  <div class="bill-info">
+                    <div class="bill-icon">
+                      <i class="fas fa-bolt"></i>
+                    </div>
+                    <div>
+                      <h4>Electric Company</h4>
+                      <p>Due: July 25, 2025</p>
+                    </div>
+                  </div>
+                  <div class="bill-amount">$89.50</div>
+                  <button class="secondary-btn">Pay Now</button>
+                </div>
+
+                <div class="bill-item">
+                  <div class="bill-info">
+                    <div class="bill-icon">
+                      <i class="fas fa-wifi"></i>
+                    </div>
+                    <div>
+                      <h4>Internet Service</h4>
+                      <p>Due: July 28, 2025</p>
+                    </div>
+                  </div>
+                  <div class="bill-amount">$79.99</div>
+                  <button class="secondary-btn">Pay Now</button>
+                </div>
+
+                <div class="bill-item">
+                  <div class="bill-info">
+                    <div class="bill-icon">
+                      <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div>
+                      <h4>Mobile Phone</h4>
+                      <p>Due: August 1, 2025</p>
+                    </div>
+                  </div>
+                  <div class="bill-amount">$65.00</div>
+                  <button class="secondary-btn">Pay Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+       <!-- Investments Section -->
+      <section id="investments" class="section">
+        <div class="section-header">
+          <h2><i class="fas fa-chart-line"></i> Investment Portfolio</h2>
+          <p>Manage your investments and track portfolio performance</p>
+        </div>
+
+        <div class="investment-summary">
+          <div class="summary-cards">
+            <div class="summary-card">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Total Portfolio Value</span>
+                <div class="summary-card-icon">
+                  <i class="fas fa-chart-pie"></i>
+                </div>
+              </div>
+              <div class="summary-card-value">$24,856.32</div>
+              <div class="summary-card-change positive">
+                <i class="fas fa-arrow-up"></i>
+                +8.7% this month
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Today's Gain/Loss</span>
+                <div class="summary-card-icon">
+                  <i class="fas fa-trending-up"></i>
+                </div>
+              </div>
+              <div class="summary-card-value">+$247.85</div>
+              <div class="summary-card-change positive">
+                <i class="fas fa-arrow-up"></i>
+                +1.02% today
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Dividend Income</span>
+                <div class="summary-card-icon">
+                  <i class="fas fa-coins"></i>
+                </div>
+              </div>
+              <div class="summary-card-value">$156.24</div>
+              <div class="summary-card-change neutral">
+                <i class="fas fa-calendar"></i>
+                This quarter
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="investment-holdings">
+          <div class="card">
+            <h2><i class="fas fa-briefcase"></i> Your Holdings</h2>
+            <div class="holdings-list">
+              <div class="holding-item">
+                <div class="holding-info">
+                  <h4>Apple Inc. (AAPL)</h4>
+                  <p>50 shares</p>
+                </div>
+                <div class="holding-value">
+                  <span class="current-value">$9,850.00</span>
+                  <span class="change positive">+2.4%</span>
+                </div>
+              </div>
+              
+              <div class="holding-item">
+                <div class="holding-info">
+                  <h4>Microsoft Corp. (MSFT)</h4>
+                  <p>30 shares</p>
+                </div>
+                <div class="holding-value">
+                  <span class="current-value">$8,745.60</span>
+                  <span class="change positive">+1.8%</span>
+                </div>
+              </div>
+
+              <div class="holding-item">
+                <div class="holding-info">
+                  <h4>S&P 500 ETF (SPY)</h4>
+                  <p>15 shares</p>
+                </div>
+                <div class="holding-value">
+                  <span class="current-value">$6,260.72</span>
+                  <span class="change negative">-0.3%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Loans Section -->
+      <section id="loans" class="section">
+        <div class="section-header">
+          <h2><i class="fas fa-hand-holding-usd"></i> Loan Services</h2>
+          <p>Apply for loans and manage your existing loan accounts</p>
+        </div>
+
+        <div class="loan-products">
+          <div class="services-grid">
+            <div class="service-card" onclick="showModal('home-loan-modal')">
+              <div class="service-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <h3>Home Loans</h3>
+              <p>Competitive rates starting from 3.25% APR for qualified buyers.</p>
+              <div class="service-features">
+                <span><i class="fas fa-check"></i> Up to 30-year terms</span>
+                <span><i class="fas fa-check"></i> No prepayment penalty</span>
+                <span><i class="fas fa-check"></i> Quick pre-approval</span>
+              </div>
+            </div>
+
+            <div class="service-card" onclick="showModal('auto-loan-modal')">
+              <div class="service-icon">
+                <i class="fas fa-car"></i>
+              </div>
+              <h3>Auto Loans</h3>
+              <p>Finance your dream car with rates as low as 2.99% APR.</p>
+              <div class="service-features">
+                <span><i class="fas fa-check"></i> New & used vehicles</span>
+                <span><i class="fas fa-check"></i> Up to 84 months</span>
+                <span><i class="fas fa-check"></i> Same-day approval</span>
+              </div>
+            </div>
+
+            <div class="service-card" onclick="showModal('personal-loan-modal')">
+              <div class="service-icon">
+                <i class="fas fa-user"></i>
+              </div>
+              <h3>Personal Loans</h3>
+              <p>Unsecured personal loans for any purpose from 5.99% APR.</p>
+              <div class="service-features">
+                <span><i class="fas fa-check"></i> $2,000 - $50,000</span>
+                <span><i class="fas fa-check"></i> Fixed interest rates</span>
+                <span><i class="fas fa-check"></i> No collateral required</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="loan-calculator">
+          <div class="card">
+            <h2><i class="fas fa-calculator"></i> Loan Calculator</h2>
+            <form class="calculator-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="loan-amount">Loan Amount</label>
+                  <input type="number" id="loan-amount" placeholder="25000" min="1000" max="1000000">
+                </div>
+                <div class="form-group">
+                  <label for="interest-rate">Interest Rate (%)</label>
+                  <input type="number" id="interest-rate" placeholder="5.5" step="0.01" min="0.1" max="30">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="loan-term">Loan Term (years)</label>
+                  <input type="number" id="loan-term" placeholder="5" min="1" max="30">
+                </div>
+                <div class="form-group">
+                  <button type="button" class="primary-btn" onclick="calculateLoan()">
+                    <i class="fas fa-calculator"></i>
+                    Calculate
+                  </button>
+                </div>
+              </div>
+            </form>
+            
+            <div class="calculation-results" style="display: none;" id="loan-results">
+              <h3>Loan Details</h3>
+              <div class="result-item">
+                <span>Monthly Payment:</span>
+                <span id="monthly-payment">$0.00</span>
+              </div>
+              <div class="result-item">
+                <span>Total Payment:</span>
+                <span id="total-payment">$0.00</span>
+              </div>
+              <div class="result-item">
+                <span>Total Interest:</span>
+                <span id="total-interest">$0.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+            <!-- Cards Section -->
+      <section id="cards" class="section">
+        <div class="section-header">
+          <h2><i class="fas fa-credit-card"></i> Credit Cards</h2>
+          <p>Manage your credit cards and explore new card options</p>
+        </div>
+
+        <div class="current-cards">
+          <div class="card">
+            <h2><i class="fas fa-wallet"></i> Your Cards</h2>
+            <div class="card-item">
+              <div class="credit-card">
+                <div class="card-header">
+                  <span class="card-brand">SecureBank</span>
+                  <i class="fab fa-cc-visa"></i>
+                </div>
+                <div class="card-number">**** **** **** 9012</div>
+                <div class="card-details">
+                  <div class="card-holder">JOHN SMITH</div>
+                  <div class="card-expiry">12/26</div>
+                </div>
+              </div>
+              <div class="card-info">
+                <div class="card-balance">
+                  <span class="balance-label">Available Credit</span>
+                  <span class="balance-amount">$3,247.50</span>
+                </div>
+                <div class="card-actions">
+                  <button class="secondary-btn" onclick="toggleCardFreeze()">
+                    <i class="fas fa-lock"></i>
+                    Freeze Card
+                  </button>
+                  <button class="secondary-btn">
+                    <i class="fas fa-cog"></i>
+                    Settings
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-offers">
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-star"></i>
+              </div>
+              <h3>Rewards Platinum</h3>
+              <p>Earn 2X points on all purchases, 3X on dining and travel.</p>
+              <div class="service-features">
+                <span><i class="fas fa-check"></i> No annual fee</span>
+                <span><i class="fas fa-check"></i> 0% APR for 12 months</span>
+                <span><i class="fas fa-check"></i> Travel insurance included</span>
+              </div>
+              <button class="primary-btn">Apply Now</button>
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-dollar-sign"></i>
+              </div>
+              <h3>Cashback Plus</h3>
+              <p>Get 5% cash back on rotating categories, 1% on everything else.</p>
+              <div class="service-features">
+                <span><i class="fas fa-check"></i> $200 welcome bonus</span>
+                <span><i class="fas fa-check"></i> No foreign transaction fees</span>
+                <span><i class="fas fa-check"></i> Mobile wallet compatible</span>
+              </div>
+              <button class="primary-btn">Apply Now</button>
+            </div>
+          </div>
+        </div>
+      </section>
+        <!-- Contact Section -->
+      <section id="contact" class="section">
+        <div class="section-header">
+          <h2><i class="fas fa-phone"></i> Contact Us</h2>
+          <p>Get in touch with our customer service team</p>
+        </div>
+
+        <div class="contact-methods">
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <h3>Phone Support</h3>
+              <p>Speak with a representative 24/7</p>
+              <div class="contact-details">
+                <p><strong>1-800-SECURE-BANK</strong></p>
+                <p>Available 24 hours a day</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <h3>Email Support</h3>
+              <p>Send us your questions and concerns</p>
+              <div class="contact-details">
+                <p><strong>support@securebank.com</strong></p>
+                <p>Response within 24 hours</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <h3>Branch Locations</h3>
+              <p>Visit us at one of our convenient locations</p>
+              <div class="contact-details">
+                <p><strong>Over 500 locations nationwide</strong></p>
+                <p>Find a branch near you</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Footer -->
+      <footer class="main-footer">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <i class="fas fa-university"></i>
+              SecureBank
+            </div>
+            <p>Your trusted partner in financial success. Experience secure, innovative banking solutions designed for the modern world.</p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4>Banking Services</h4>
+            <ul>
+              <li><a href="#" onclick="showSection('banking')">Personal Banking</a></li>
+              <li><a href="#" onclick="showSection('banking')">Business Banking</a></li>
+              <li><a href="#" onclick="showSection('banking')">Online Banking</a></li>
+              <li><a href="#" onclick="showSection('banking')">Mobile Banking</a></li>
+              <li><a href="#" onclick="showSection('cards')">Credit Cards</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Financial Solutions</h4>
+            <ul>
+              <li><a href="#" onclick="showSection('loans')">Home Loans</a></li>
+              <li><a href="#" onclick="showSection('loans')">Auto Loans</a></li>
+              <li><a href="#" onclick="showSection('loans')">Personal Loans</a></li>
+              <li><a href="#" onclick="showSection('investments')">Investment Services</a></li>
+              <li><a href="#" onclick="showSection('investments')">Retirement Planning</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Support & Contact</h4>
+            <div class="contact-info">
+              <p><i class="fas fa-phone"></i> 1-800-SECURE-BANK</p>
+              <p><i class="fas fa-envelope"></i> support@securebank.com</p>
+              <p><i class="fas fa-map-marker-alt"></i> 123 Financial District, NY 10004</p>
+              <p><i class="fas fa-clock"></i> 24/7 Customer Support</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <p>&copy; 2025 SecureBank. All rights reserved.</p>
+            <div class="footer-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Security</a>
+              <a href="#">Accessibility</a>
+              <a href="#">Site Map</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+      <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('login-modal')">&times;</button>
+        <h2>Login to SecureBank</h2>
+        <form>
+          <div class="form-group">
+            <label for="username">Username or Email</label>
+            <input type="text" id="username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" required>
+          </div>
+          <button type="submit" class="primary-btn">
+            <i class="fas fa-sign-in-alt"></i>
+            Login
+          </button>
+          <a href="#" class="forgot-password">Forgot Password?</a>
+        </form>
+      </div>
+    </div>
+     <!-- Sign Up Modal -->
+    <div id="signup-modal" class="modal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('signup-modal')">&times;</button>
+        <h2>Create Your Account</h2>
+        <form>
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="new-password">Password</label>
+            <input type="password" id="new-password" required>
+          </div>
+          <button type="submit" class="primary-btn">
+            <i class="fas fa-user-plus"></i>
+            Create Account
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
