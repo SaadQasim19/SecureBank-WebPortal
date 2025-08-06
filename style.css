@@ -1167,3 +1167,32 @@ header {
     font-weight: var(--font-weight-bold);
     color: var(--hbl-green);
 }
+
+/* Investment Styles */
+.investment-summary {
+    margin-bottom: var(--spacing-xl);
+}
+
+.holding-value {
+    text-align: right;
+}
+
+.current-value {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--hbl-green);
+    display: block;
+}
+
+.change {
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-medium);
+}
+
+.change.positive {
+    color: var(--success-color);
+}
+
+.change.negative {
+    color: var(--error-color);
+}
