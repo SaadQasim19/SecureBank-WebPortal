@@ -1280,3 +1280,12 @@ header {
     font-weight: var(--font-weight-bold);
     color: var(--hbl-green);
 }
+
+/* Contact Details */
+.contact-details {
+    margin-top: var(--spacing-lg);
+}
+
+.contact-details p {
+    margin-bottom: var(--spacing-sm);
+}
