@@ -1289,3 +1289,25 @@ header {
 .contact-details p {
     margin-bottom: var(--spacing-sm);
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .transfer-form .form-row,
+    .calculator-form .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .credit-card {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .transaction-filters {
+        flex-direction: column;
+    }
+}
