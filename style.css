@@ -1245,3 +1245,38 @@ header {
     display: flex;
     gap: var(--spacing-md);
 }
+/* Loan Calculator */
+.calculator-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.calculation-results {
+    background: var(--background-gray);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.calculation-results h3 {
+    color: var(--hbl-green);
+    margin-bottom: var(--spacing-lg);
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--border-gray);
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-item span:last-child {
+    font-weight: var(--font-weight-bold);
+    color: var(--hbl-green);
+}
