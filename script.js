@@ -239,3 +239,37 @@ function handleTransfer(event) {
         showNotification('Invalid transfer amount', 'error');
     }
 }
+
+// Initialize Event Listeners
+function initializeEventListeners() {
+    // Add keyboard navigation for accessibility
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            const openModals = document.querySelectorAll('.modal[style*="block"]');
+            openModals.forEach(modal => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        }
+    });
+    
+    // Add form submission handlers
+    const transferForm = document.getElementById('transfer-form');
+    if (transferForm) {
+        transferForm.addEventListener('submit', handleTransfer);
+    }
+    
+    // Add smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
