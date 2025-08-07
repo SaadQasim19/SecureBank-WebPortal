@@ -289,3 +289,29 @@ function updateSpendingPeriod(period) {
     updateSpendingData(period);
     showNotification(`Updated spending analysis for ${period}`);
 }
+function updateSpendingData(period) {
+    // Calculate spending based on period
+    let totalSpent = 0;
+    let transactionCount = 0;
+    
+    transactions.forEach(transaction => {
+        if (transaction.amount < 0) {
+            totalSpent += Math.abs(transaction.amount);
+            transactionCount++;
+        }
+    });
+    
+    const avgDaily = totalSpent / 30; // Assuming monthly data
+    
+    // Update display elements
+    const totalSpentElement = document.getElementById('total-spent');
+    const avgDailyElement = document.getElementById('avg-daily');
+    
+    if (totalSpentElement) {
+        totalSpentElement.textContent = `$${totalSpent.toFixed(2)}`;
+    }
+    
+    if (avgDailyElement) {
+        avgDailyElement.textContent = `$${avgDaily.toFixed(2)}`;
+    }
+}
