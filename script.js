@@ -204,3 +204,38 @@ function showNotification(message, type = 'success') {
         }, 300);
     }, 3000);
 }
+// Form Handlers
+function handleTransfer(event) {
+    event.preventDefault();
+    const form = event.target;
+    const amount = parseFloat(form.amount.value);
+    const recipient = form.recipient.value;
+    
+    if (amount > 0 && amount <= currentBalance) {
+        currentBalance -= amount;
+        updateBalance();
+        
+        // Add transaction
+        const newTransaction = {
+            id: transactions.length + 1,
+            description: `Transfer to ${recipient}`,
+            date: new Date().toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            }),
+            amount: -amount,
+            category: 'expense',
+            type: 'transfer'
+        };
+        
+        transactions.unshift(newTransaction);
+        loadTransactions();
+        
+        showNotification(`Successfully transferred $${amount.toFixed(2)} to ${recipient}`);
+        closeModal('transfer-modal');
+        form.reset();
+    } else {
+        showNotification('Invalid transfer amount', 'error');
+    }
+}
