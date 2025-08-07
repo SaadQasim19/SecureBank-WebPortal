@@ -273,3 +273,19 @@ function initializeEventListeners() {
         });
     });
 }
+
+
+// Spending Analysis Functions
+function updateSpendingPeriod(period) {
+    const buttons = document.querySelectorAll('.period-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    
+    const activeButton = document.querySelector(`[onclick="updateSpendingPeriod('${period}')"]`);
+    if (activeButton) {
+        activeButton.classList.add('active');
+    }
+    
+    // Update spending data based on period
+    updateSpendingData(period);
+    showNotification(`Updated spending analysis for ${period}`);
+}
