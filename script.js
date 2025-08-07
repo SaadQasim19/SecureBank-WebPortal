@@ -146,3 +146,27 @@ function loadTransactions() {
         transactionsList.appendChild(transactionElement);
     });
 }
+
+function createTransactionElement(transaction) {
+    const div = document.createElement('div');
+    div.className = 'transaction-item';
+    
+    const isPositive = transaction.amount > 0;
+    const amountClass = isPositive ? 'amount-positive' : 'amount-negative';
+    const iconClass = isPositive ? 'income' : 'expense';
+    
+    div.innerHTML = `
+        <div class="transaction-icon ${iconClass}">
+            <i class="fas ${getTransactionIcon(transaction.type)}"></i>
+        </div>
+        <div class="transaction-info">
+            <div class="transaction-description">${transaction.description}</div>
+            <div class="transaction-date">${transaction.date}</div>
+        </div>
+        <div class="transaction-amount ${amountClass}">
+            ${isPositive ? '+' : ''}$${Math.abs(transaction.amount).toFixed(2)}
+        </div>
+    `;
+    
+    return div;
+}
