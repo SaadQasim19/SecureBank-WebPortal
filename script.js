@@ -135,3 +135,14 @@ function updateBalance() {
         })}`;
     }
 }
+function loadTransactions() {
+    const transactionsList = document.getElementById('transactions-list');
+    if (!transactionsList) return;
+    
+    transactionsList.innerHTML = '';
+    
+    transactions.slice(0, 5).forEach(transaction => {
+        const transactionElement = createTransactionElement(transaction);
+        transactionsList.appendChild(transactionElement);
+    });
+}
