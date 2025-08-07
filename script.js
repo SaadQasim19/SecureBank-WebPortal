@@ -315,3 +315,6 @@ function updateSpendingData(period) {
         avgDailyElement.textContent = `$${avgDaily.toFixed(2)}`;
     }
 }
+
+//! Card Management Variables
+//! Card Management Functions
