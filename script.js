@@ -182,3 +182,4 @@ function getTransactionIcon(type) {
         default: return 'fa-circle';
     }
 }
+//! Notification System
