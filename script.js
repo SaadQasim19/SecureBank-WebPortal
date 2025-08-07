@@ -170,3 +170,15 @@ function createTransactionElement(transaction) {
     
     return div;
 }
+
+function getTransactionIcon(type) {
+    switch (type) {
+        case 'deposit': return 'fa-plus-circle';
+        case 'withdrawal': return 'fa-minus-circle';
+        case 'transfer': return 'fa-exchange-alt';
+        case 'bill': return 'fa-file-invoice-dollar';
+        case 'purchase': return 'fa-shopping-cart';
+        case 'refund': return 'fa-undo';
+        default: return 'fa-circle';
+    }
+}
