@@ -335,10 +335,16 @@ function toggleCardFreeze() {
     showNotification(message);
     updateCardDisplay();
 }
+
 function updateCardDisplay() {
     const statusElement = document.querySelector('.card-status');
     if (statusElement) {
         statusElement.textContent = cardFrozen ? 'Frozen' : 'Active';
         statusElement.className = `status-badge ${cardFrozen ? 'frozen' : 'active'}`;
     }
+}
+
+// Investment Functions
+function updatePortfolio() {
+    showNotification('Portfolio data updated successfully');
 }
