@@ -348,3 +348,25 @@ function updateCardDisplay() {
 function updatePortfolio() {
     showNotification('Portfolio data updated successfully');
 }
+
+
+// Loan Calculator
+function calculateLoan() {
+    const principal = parseFloat(document.getElementById('loan-amount').value);
+    const rate = parseFloat(document.getElementById('interest-rate').value) / 100 / 12;
+    const months = parseInt(document.getElementById('loan-term').value) * 12;
+    
+    if (principal && rate && months) {
+        const monthlyPayment = (principal * rate * Math.pow(1 + rate, months)) / (Math.pow(1 + rate, months) - 1);
+        const totalPayment = monthlyPayment * months;
+        const totalInterest = totalPayment - principal;
+        
+        document.getElementById('monthly-payment').textContent = `$${monthlyPayment.toFixed(2)}`;
+        document.getElementById('total-payment').textContent = `$${totalPayment.toFixed(2)}`;
+        document.getElementById('total-interest').textContent = `$${totalInterest.toFixed(2)}`;
+        
+        showNotification('Loan calculation completed');
+    } else {
+        showNotification('Please fill in all loan details', 'error');
+    }
+}
