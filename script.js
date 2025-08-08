@@ -384,5 +384,5 @@ window.toggleCardFreeze = toggleCardFreeze;
 window.calculateLoan = calculateLoan;
 window.updatePortfolio = updatePortfolio;
 
-// Console log for debugging
+//! Debug Console
 console.log('SecureBank Banking Application Loaded Successfully');
