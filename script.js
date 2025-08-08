@@ -370,3 +370,16 @@ function calculateLoan() {
         showNotification('Please fill in all loan details', 'error');
     }
 }
+
+// Export functions for global access
+window.showSection = showSection;
+window.showTab = showTab;
+window.nextSlide = nextSlide;
+window.previousSlide = previousSlide;
+window.currentSlide = currentSlideFunc;
+window.showModal = showModal;
+window.closeModal = closeModal;
+window.updateSpendingPeriod = updateSpendingPeriod;
+window.toggleCardFreeze = toggleCardFreeze;
+window.calculateLoan = calculateLoan;
+window.updatePortfolio = updatePortfolio;
