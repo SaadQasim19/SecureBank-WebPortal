@@ -317,4 +317,12 @@ function updateSpendingData(period) {
 }
 
 //! Card Management Variables
+let cardFrozen = false;
+let cardSettings = {
+    dailyLimit: 1000,
+    atmLimit: 500,
+    contactless: true,
+    international: true,
+    notifications: true
+};
 //! Card Management Functions
