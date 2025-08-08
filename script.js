@@ -326,3 +326,12 @@ let cardSettings = {
     notifications: true
 };
 //! Card Management Functions
+
+function toggleCardFreeze() {
+    cardFrozen = !cardFrozen;
+    const status = cardFrozen ? 'frozen' : 'active';
+    const message = cardFrozen ? 'Card has been frozen' : 'Card has been activated';
+    
+    showNotification(message);
+    updateCardDisplay();
+}
